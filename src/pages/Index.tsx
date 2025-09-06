@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import HomePage from "@/components/HomePage";
+import SearchPage from "@/components/SearchPage";
+import MarketplacePage from "@/components/MarketplacePage";
 import ProgressPage from "@/components/ProgressPage";
 import ChallengesPage from "@/components/ChallengesPage";
 import CommunityPage from "@/components/CommunityPage";
@@ -13,6 +15,10 @@ const Index = () => {
     switch (currentPage) {
       case "home":
         return <HomePage />;
+      case "search":
+        return <SearchPage />;
+      case "marketplace":
+        return <MarketplacePage />;
       case "progress":
         return <ProgressPage />;
       case "challenges":

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, TrendingUp, Trophy, Users, Settings, Bot, Mic } from "lucide-react";
+import { Home, TrendingUp, Trophy, Users, Settings, Bot, Mic, Search, ShoppingCart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface LayoutProps {
@@ -10,6 +10,8 @@ interface LayoutProps {
 
 const navItems = [
   { id: "home", label: "Home", icon: Home },
+  { id: "search", label: "Search", icon: Search },
+  { id: "marketplace", label: "Market", icon: ShoppingCart },
   { id: "progress", label: "Progress", icon: TrendingUp },
   { id: "challenges", label: "Challenges", icon: Trophy },
   { id: "community", label: "Community", icon: Users },
