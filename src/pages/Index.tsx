@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Layout from "@/components/Layout";
+import HomePage from "@/components/HomePage";
+import ProgressPage from "@/components/ProgressPage";
+import ChallengesPage from "@/components/ChallengesPage";
+import CommunityPage from "@/components/CommunityPage";
+import SettingsPage from "@/components/SettingsPage";
 
 const Index = () => {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <HomePage />;
+      case "progress":
+        return <ProgressPage />;
+      case "challenges":
+        return <ChallengesPage />;
+      case "community":
+        return <CommunityPage />;
+      case "settings":
+        return <SettingsPage />;
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout currentPage={currentPage} setCurrentPage={setCurrentPage}>
+      {renderPage()}
+    </Layout>
   );
 };
 
